@@ -1,13 +1,39 @@
-import React from 'react'
+import React, { useState } from 'react'
+import './LoginForm.scss'
+import {useNavigate} from 'react-router-dom'
+import { signInWithEmailAndPassword } from "firebase/auth";
+import {auth} from '../../firebase'
+
+
 
 export default function LoginForm() {
+    const [error, setError] = useState(false)
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const navigate = useNavigate()
+
+    const handleLogin = (e) =>{
+        e.preventDefault()
+    }
+signInWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+    console.log(user)
+    navigate('/')
+  })
+  .catch((error) => {
+setError(true)
+  });
   return (
+
     <div className='login'>
-        <forn>
-            <input type='email' placeholder='Johndoe@gmail.com'/>
-            <input type='password' placeholder='password123'/>
+        <form onSubmit={handleLogin} className='login__form'>
+            <input type='email' placeholder='Johndoe@gmail.com' className='login__input' onChange={e=>setEmail(e.target.value)}/>
+            <input type='password' placeholder='password123' className='login__input' onChange={e=>setPassword(e.target.value)}/>
             <button type='submit'>Login</button>
-        </forn>
+            {error && <span className='login__error'>Wrong email or password!</span>}
+        </form>
 
 
     </div>
