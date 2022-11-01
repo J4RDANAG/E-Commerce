@@ -120,7 +120,8 @@ export default  function AdminAdd  ()  {
                     onChange={handleInput} id='Price' />
                 <br />
                 <label htmlFor="product-img">Product Image</label>
-                <input type="file" className='form-control' id="file" required
+                <input type="file" className='form-control' id="images
+                " required
                     onChange={(e) => setFile(e.target.files[0])} />
                 <br />
                 <button type="submit" className='btn btn-success btn-md mybtn'>ADD</button>

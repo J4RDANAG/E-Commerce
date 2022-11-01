@@ -5,7 +5,7 @@ import AdminAside from '../../components/AdminAside/AdminAside'
 export default function Admin() {
   return (
     <>
-  <AdminAside/>
+      <AdminAside/>
     
     </>
     
