@@ -4,7 +4,7 @@ import AdminAside from "../../components/AdminAside/AdminAside";
 import "./AdminProducts.scss";
 import EditIcon from "../../assets/Icons/EditIcon.svg";
 import DeleteIcon from "../../assets/Icons/DeleteIcon.svg";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, doc, deleteDoc } from "firebase/firestore";
 import { db } from "../../firebase";
 
 export default function AdminProducts() {
@@ -31,10 +31,16 @@ export default function AdminProducts() {
     fetchData();
   }, []);
 
-  const handleDelete = (id) => {
-    setData(data.filter((item) => item.id !== id));
+  const handleDelete = async (id) => {
+    try{
+      await deleteDoc(doc(db, 'Products', id))
+      setData(data.filter((item) => item.id !== id));
+    }catch(err){
+      console.log('did not delete')
+    }
+    
   };
-console.log(data)
+// console.log(data)
   return (
     // <>
       <div className="position-aside">
@@ -57,8 +63,14 @@ console.log(data)
               <h4>{product.timestamp}</h4>
               <div className="admin-products__btns">
                 <div className="admin-products__icons">
+                  <Link to={`/admin/${product.id}/edit`}> 
                   <img src={EditIcon} />
+                  </Link>
+                  
+                  <div onClick={() => handleDelete(product.id)}>
                   <img src={DeleteIcon} />
+                    </div>
+                  
                 </div>
               </div>
             </div>

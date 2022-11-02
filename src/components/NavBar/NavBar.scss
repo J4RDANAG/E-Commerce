@@ -1,22 +1,98 @@
+@use '../../styles/partials/mixins' as *;
+
 .nav{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 32px 8rem 32px 8rem;
-    gap: 5rem;
-    &__container{
+    display: none;
+    @include desktop{
         display: flex;
+        justify-content: space-between;
         align-items: center;
+        padding: 32px 8rem 32px 8rem;
         gap: 5rem;
     }
+
+    &__container{
+        @include desktop {
+            display: flex;
+            align-items: center;
+            gap: 5rem;
+        }
+    }
     &__link{
-        text-decoration: none;
-        color: inherit;
+        @include desktop {
+            text-decoration: none;
+            color: inherit;
+        }
+
     }
     &__link--cart{
-        justify-self: flex-end;
+        @include desktop {
+            justify-self: flex-end;
+        }
+
     }
     &__header2{
-        padding-left: 36px;
+        @include desktop {
+            padding-left: 36px;
+        }
     }
+}
+
+.mobile-nav{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+@include desktop{
+    display: none;
+}
+
+  
+  &__btn {
+    z-index: 10;
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+  }
+  
+  &__ul {
+    display: flex;
+    flex-direction: column;
+    padding-top: 4rem;
+    align-items: center;
+    overflow-y: scroll;
+    list-style: none;
+    position: fixed;
+    top: 0;
+    background: grey;
+    right: 0;
+    bottom: 0;
+    height: 30vh;
+    width: 0;
+    overflow: hidden;
+    max-width: 150px;
+    z-index: 9;
+    gap: 1rem;
+    color: white;
+  }
+//   &__list-item{
+//     padding: 16px;
+//   }
+  
+  &--show {
+    width: 100%;
+  }
+  
+  &__link {
+    color: inherit;
+    font-size: 12px;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  &__link:hover {
+    color: inherit;
+    font-size: 16px;
+    color: blue;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
 }

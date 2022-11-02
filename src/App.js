@@ -10,6 +10,7 @@ import AdminProducts from './pages/AdminProducts/AdminProducts';
 import AdminAdd from './pages/AdminAdd/AdminAdd';
 import About from './pages/About/About';
 import ProductsPage from './pages/ProductsPage/ProductsPage';
+import AdminEdit from './pages/AdminEdit/AdminEdit';
 
 function App() {
   const {currentUser} = useContext(AuthContext)
@@ -32,6 +33,7 @@ console.log(currentUser)
           <Route path='/admin' element={<RequireAuth><AdminPage/></RequireAuth>}/>
           <Route path='/admin/products' element={<RequireAuth><AdminProducts/></RequireAuth>}/>
           <Route path='/admin/add' element={<RequireAuth><AdminAdd/></RequireAuth>}/>
+          <Route path='/admin/:id/edit' element={<RequireAuth><AdminEdit/></RequireAuth>}/>
           
           <Route/>
         </Routes>
