@@ -8,6 +8,8 @@ import {useContext} from 'react'
 import Register from './pages/RegisterPage/Register';
 import AdminProducts from './pages/AdminProducts/AdminProducts';
 import AdminAdd from './pages/AdminAdd/AdminAdd';
+import About from './pages/About/About';
+import ProductsPage from './pages/ProductsPage/ProductsPage';
 
 function App() {
   const {currentUser} = useContext(AuthContext)
@@ -23,11 +25,14 @@ console.log(currentUser)
       <Router>
         <Routes>
           <Route path='/' element={<HomePage/>}/>
+          <Route path='/register' element={<Register/>}/>
           <Route path='/login'  element={<LoginPage/>}/>
+          <Route path='/about' element={<About/>}/>
+          <Route path='/products' element={<ProductsPage/>}/>
           <Route path='/admin' element={<RequireAuth><AdminPage/></RequireAuth>}/>
           <Route path='/admin/products' element={<RequireAuth><AdminProducts/></RequireAuth>}/>
           <Route path='/admin/add' element={<RequireAuth><AdminAdd/></RequireAuth>}/>
-          <Route path='/register' element={<Register/>}/>
+          
           <Route/>
         </Routes>
 
