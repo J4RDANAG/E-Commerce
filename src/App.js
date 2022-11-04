@@ -12,6 +12,8 @@ import About from './pages/About/About';
 import ProductsPage from './pages/ProductsPage/ProductsPage';
 import AdminEdit from './pages/AdminEdit/AdminEdit';
 
+
+
 function App() {
   const {currentUser} = useContext(AuthContext)
 
@@ -19,6 +21,7 @@ const RequireAuth = ({ children }) => {
   return currentUser ? children : <Navigate to='/login'/>
 }
 console.log(currentUser)
+
 
   // TODO: Role based Auth, seperate all admin route into its own Routes? 
   return (
@@ -34,10 +37,8 @@ console.log(currentUser)
           <Route path='/admin/products' element={<RequireAuth><AdminProducts/></RequireAuth>}/>
           <Route path='/admin/add' element={<RequireAuth><AdminAdd/></RequireAuth>}/>
           <Route path='/admin/:id/edit' element={<RequireAuth><AdminEdit/></RequireAuth>}/>
-          
           <Route/>
         </Routes>
-
       </Router>
     </>
   );

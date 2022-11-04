@@ -1,31 +1,22 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import './NavBar.scss'
 import ShoppingCart from '../../assets/Icons/ShoppingCart.svg'
 import MobileCart from '../../assets/Icons/MobileCart.svg'
 import Accordian from '../../assets/Icons/Accordian.svg'
 import closeNav from '../../assets/Icons/DeleteIcon.svg'
-import Modal from 'react-modal'
+import CartContext from '../../context/cart/CartContext'
+
+
 
 export default function NavBar() {
+    const { cartItems, showHideCart} = useContext(CartContext)
+   
     const [navBarOpen, setNavBarOpen] = useState(false)
     const handleToggle = () => {
         setNavBarOpen(!navBarOpen)
       }
 
-      const [modalIsOpen, setIsOpen] = useState(false);
-
-      function openModal() {
-        setIsOpen(true);
-      }
-      const navigate = useNavigate();
-    
-      function closeModal() {
-        setIsOpen(false);
-        navigate("/inventory");
-      }
-    
-      Modal.setAppElement(".App");
   return (
     <>
         <nav className='nav'>
@@ -39,11 +30,14 @@ export default function NavBar() {
         <Link to='/about' className='nav__link'>About</Link>
         <Link to='/products' className='nav__link'>Shop All</Link>
         </div>
-        <Link className='nav__link  nav__link--cart'>
+        <button className='nav__link--cart' onClick={showHideCart}>
             <img src={ShoppingCart}/>
-        </Link>
+            
+            { cartItems.length > 0 && <div className='nav__cart-items'><span>{cartItems.length}</span></div> }
+        </button>
         
-            {/* Shopping Cart SVG, with incrementing number, MODAL? */}
+        
+            
         </nav>
         <nav className='mobile-nav'>
             <div>
@@ -60,7 +54,7 @@ export default function NavBar() {
 
         </nav>
         
-    
+        {/* { cartItems > 0 && <div className='mobile-nav__cart-items'></div> } */}
     </>
   )
 }

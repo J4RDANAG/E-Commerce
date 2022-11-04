@@ -1,0 +1,38 @@
+.cartItem {
+    border-bottom: 1px solid gray;
+    padding: 10px 0;
+    margin-top: 10px;
+    list-style-type: none;
+    height: 100px;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    .cartItem:nth-child(1) {
+      border-top: 1px solid gray;
+    }
+    &__img{
+      height: 100%;
+      width: 100px;
+      object-fit: cover;
+    }
+    .cartItem__btn {
+      margin-left: auto;
+      padding: 4px 8px;
+      border-radius: 4px;
+      border: none;
+      cursor: pointer;
+    }
+    .cartItem__btn:focus,
+    .cartItem__btn:active {
+      outline: none;
+    }
+  }
+
+  
+
+  
+
+
+  
+
+  

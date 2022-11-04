@@ -56,7 +56,7 @@ export default function AdminEdit() {
 
     <div className="container">
     <br />
-    <h2>ADD PRODUCTS</h2>
+    <h2>EDIT PRODUCTS</h2>
     <hr />
     <form autoComplete="off" className="form-group" 
     
@@ -91,6 +91,26 @@ export default function AdminEdit() {
         onChange={editWithInput}
         id="Price"
       />
+              <br />
+        <label htmlFor="product-Brand">Product Brand</label>
+        <input
+          type="text"
+          className="form-control"
+          required
+          value={userInput.Brand}
+          onChange={editWithInput}
+          id="Brand"
+        />
+        <br />
+        <label htmlFor="product-Size">Product Size</label>
+        <input
+          type="text"
+          className="form-control"
+          required
+          value={userInput.Size}
+          onChange={editWithInput}
+          id="Size"
+        />
       {/* <br />
       <label htmlFor="product-img">Product Image</label> */}
       {/* <input

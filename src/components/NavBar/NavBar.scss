@@ -26,7 +26,9 @@
     }
     &__link--cart{
         @include desktop {
-            justify-self: flex-end;
+            display: flex;
+            position: relative;
+            
         }
 
     }
@@ -34,6 +36,18 @@
         @include desktop {
             padding-left: 36px;
         }
+    }
+    &__cart-items{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 20px;
+      height: 20px;
+      color: white;
+      background-color: red;
+      border-radius: 50%;
+      position: absolute;
+      right: 0;
     }
 }
 
