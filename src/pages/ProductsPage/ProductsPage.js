@@ -6,6 +6,7 @@ import { getDocs, collection } from "firebase/firestore";
 import "./ProductsPage.scss";
 import CartContext from "../../context/cart/CartContext";
 import ShoppingCart from '../../components/ShoppingCart/ShoppingCart'
+import { MobileNav } from "../../components/MobileNav/MobileNav";
 
 export default function ProductsPage() {
   const { addToCart } = useContext(CartContext);
@@ -32,6 +33,9 @@ export default function ProductsPage() {
     <>
       <NavBar />
       <ShoppingCart/>
+      <div className='mobileNav'>
+        <MobileNav/>
+        </div>
       
       <div className="products">
         <div className="products__card">

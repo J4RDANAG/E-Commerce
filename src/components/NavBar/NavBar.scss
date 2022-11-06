@@ -4,6 +4,8 @@
     display: none;
     @include desktop{
         display: flex;
+        position: sticky;
+        top: 0;
         justify-content: space-between;
         align-items: center;
         padding: 32px 8rem 32px 8rem;
@@ -48,6 +50,7 @@
       border-radius: 50%;
       position: absolute;
       right: 0;
+      
     }
 }
 
@@ -56,6 +59,8 @@
     display: flex;
     justify-content: space-between;
     padding: 16px;
+    background-color: grey;
+    
 @include desktop{
     display: none;
 }
@@ -92,6 +97,7 @@
   
   &--show {
     width: 100%;
+    transition: 2s;
   }
   
   &__link {

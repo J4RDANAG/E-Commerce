@@ -40,18 +40,17 @@ export default function NavBar() {
             
         </nav>
         <nav className='mobile-nav'>
-            <div>
-                <div>f_cking</div> 
-                <div>sick</div>
+            <div className='mobile-nav__top'>
+                <div>f_ckingsick</div> 
             </div>
+            {/* <div className='mobile-nav__bottom'>
             <button className='mobile-nav__btn'onClick={handleToggle}>{navBarOpen ? <img src={closeNav}/> : 'open' }</button>
             <ul className={`mobile-nav__ul ${navBarOpen ? " mobile-nav--show" : ""}`}>
                 <Link className='mobile-nav__link' to='/'><li className='mobile-nav__list-item'>Home</li></Link>
                 <Link className='mobile-nav__link' to='/about'><li>About</li></Link>
                 <Link className='mobile-nav__link' to='/products'><li>Shop</li></Link>
-                <Link className='mobile-nav__link'><li>Shopping Cart</li></Link>
             </ul>
-
+            </div> */}
         </nav>
         
         {/* { cartItems > 0 && <div className='mobile-nav__cart-items'></div> } */}

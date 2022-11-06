@@ -1,0 +1,13 @@
+@use '../../styles/partials/mixins' as *;
+
+
+.mobileNav{
+    position: sticky;
+    bottom: 0;
+@include tablet{
+    display: none;
+}
+@include desktop{
+    display: none;
+}
+}

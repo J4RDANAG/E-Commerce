@@ -1,7 +1,7 @@
-.cart {
+.mobile-cart {
     position: fixed;
-    top: 60px;
-    right: 20px;
+    bottom: 68px;
+    // right: 20px;
     border-radius: 12px;
     background-color: white;
     border: 1px solid gray;
@@ -27,16 +27,3 @@
      justify-content: flex-end;
     }
   }
-  
-
-  
-
-  
-  // .fa-times-circle {
-  //   color: gray;
-  //   transition: transform 0.2s linear;
-  // }
-  
-  // .fa-times-circle:hover {
-  //   transform: rotate(90deg);
-  // }

@@ -1,13 +1,14 @@
 import { useReducer } from "react";
 import CartContext from "./CartContext";
 import CartReducer from "./CartReducer";
-import { SHOW_HIDE_CART, ADD_TO_CART, REMOVE_ITEM, GET_CART_ITEMS } from "../Types";
+import { SHOW_HIDE_CART, ADD_TO_CART, REMOVE_ITEM, GET_CART_ITEMS, MOBILE_SHOW_HIDE_CART } from "../Types";
 
 
 
 const CartState = ({ children }) => {
   const initialState = {
     showCart: false,
+    mobileShowCart: false,
     cartItems: JSON.parse(localStorage.getItem("cartItems")) ?? [],
     
   };
@@ -34,6 +35,9 @@ const CartState = ({ children }) => {
   const showHideCart = () => {
     dispatch({ type: SHOW_HIDE_CART });
   };
+  const mobileShowHideCart = () => {
+    dispatch({ type: MOBILE_SHOW_HIDE_CART });
+  };
   const removeItem = (id) => {
     dispatch({ type: REMOVE_ITEM, payload: id });
     const prevCartItems = JSON.parse(localStorage.getItem("cartItems"));
@@ -45,11 +49,13 @@ const CartState = ({ children }) => {
     <CartContext.Provider
       value={{
         showCart: state.showCart,
+        mobileShowCart: state.mobileShowCart,
         cartItems: state.cartItems,
         getCartItems,
         addToCart,
         showHideCart,
         removeItem,
+        mobileShowHideCart
       }}
     >
       {children}
