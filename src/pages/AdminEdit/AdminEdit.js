@@ -7,10 +7,11 @@ import { db } from "../../firebase";
 
 export default function AdminEdit() {
     const [userInput, setUserInput] = useState(null)
+    const {id} = useParams()
 
     const fetchData = async () => {
       
-        const docRef = doc(db, "Products", "uqoAFwr2KQrdlMKwvJor");
+        const docRef = doc(db, "Products", id);
         try {
             const docSnap = await getDoc(docRef);
              let data = docSnap.data()    
