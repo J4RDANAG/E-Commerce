@@ -6,6 +6,8 @@ import MobileCart from '../../assets/Icons/MobileCart.svg'
 import Accordian from '../../assets/Icons/Accordian.svg'
 import closeNav from '../../assets/Icons/DeleteIcon.svg'
 import CartContext from '../../context/cart/CartContext'
+import logoGif from '../../assets/logos/logo.gif'
+import staticLogo from '../../assets/logos/f_ckingSick_s.png'
 
 
 
@@ -23,8 +25,7 @@ export default function NavBar() {
             <div className='nav__container'>
             <Link to='/' className='nav__link'>
                 <div className='nav__header-container'>
-                    <h1 className='nav__header1'>f_cking</h1>
-                    <h1 className='nav__header2'>sick</h1>
+                <img src={staticLogo}/>
                 </div>
             </Link>
         <Link to='/about' className='nav__link'>About</Link>
@@ -41,7 +42,10 @@ export default function NavBar() {
         </nav>
         <nav className='mobile-nav'>
             <div className='mobile-nav__top'>
-                <div>f_ckingsick</div> 
+                <div>
+                    {/* <img src={logoGif} /> */}
+                    f_ckingsick
+                    </div> 
             </div>
             {/* <div className='mobile-nav__bottom'>
             <button className='mobile-nav__btn'onClick={handleToggle}>{navBarOpen ? <img src={closeNav}/> : 'open' }</button>

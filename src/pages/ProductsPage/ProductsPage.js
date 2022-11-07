@@ -7,6 +7,7 @@ import "./ProductsPage.scss";
 import CartContext from "../../context/cart/CartContext";
 import ShoppingCart from '../../components/ShoppingCart/ShoppingCart'
 import { MobileNav } from "../../components/MobileNav/MobileNav";
+import MobileCart from '../../components/MobileCart/MobileCart'
 
 export default function ProductsPage() {
   const { addToCart } = useContext(CartContext);
@@ -33,12 +34,10 @@ export default function ProductsPage() {
     <>
       <NavBar />
       <ShoppingCart/>
-      <div className='mobileNav'>
-        <MobileNav/>
-        </div>
+
       
       <div className="products">
-        <div className="products__card">
+        {/* <div className="products__card">
           <div className="products__img">
             <img src="http://placekitten.com/280/300"></img>
           </div>
@@ -55,9 +54,9 @@ export default function ProductsPage() {
                 +
                 <img src={productCardCart} />
               </button>
-            </div>
-          </div>
-        </div>
+            </div> */}
+          {/* </div>
+        </div> */}
         {productData?.map((product) => (
           
           <div className="products__card" key={product.id}>
@@ -79,6 +78,10 @@ export default function ProductsPage() {
             </div>
           </div>
         ))}
+      </div>
+      <div className='mobileNav'>
+        <MobileNav/>
+        <MobileCart/>
       </div>
     </>
   );

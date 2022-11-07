@@ -10,6 +10,10 @@
         align-items: center;
         padding: 32px 8rem 32px 8rem;
         gap: 5rem;
+        color: white;
+        background-image: url(../../assets/background-images/concrete-background.jpg);
+        // background-position: center;
+        background-size: cover;
     }
 
     &__container{
