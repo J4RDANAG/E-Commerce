@@ -1,15 +1,16 @@
 import {Link} from 'react-router-dom'
+import './AdminAside.scss'
 
 export default function AdminAside() {
   return (
     <>
-    <aside>
+    <aside className='aside'>
         
-      <div>f_cking<br/>sick</div>
+      <div className='aside__link'>f_ckingsick admin</div>
       <ul>
-        <li><Link to='/'>Home Page</Link></li>
-        <li><Link to='/products'>Products Page</Link></li>
-        <li><Link to='/admin/products'>Products List</Link></li>
+        <li className='aside__list-item'><Link to='/' className='aside__link'>Home Page</Link></li>
+        <li className='aside__list-item'><Link className='aside__link' to='/products'>Products Page</Link></li>
+        <li className='aside__list-item'><Link className='aside__link' to='/admin/add'>Add a Product</Link></li>
       </ul>
       
     </aside>

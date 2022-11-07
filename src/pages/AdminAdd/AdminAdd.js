@@ -14,7 +14,10 @@ import {
   getStorage,
   uploadBytes,
 } from "firebase/storage";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom"
+import './AdminAdd.scss'
+import AdminAside from "../../components/AdminAside/AdminAside";
+
 
 export default function AdminAdd() {
   const [files, setFiles] = useState("");
@@ -56,18 +59,20 @@ export default function AdminAdd() {
         imgs: urls,
         Price: Number(data.Price)
       });
-      // navigate(-1)
+      navigate('/admin')
     } catch (err) {
       console.log(err);
     }
   };
 
   return (
+    <>
+    <div className="position-aside">
+      <AdminAside/>
     <div className="container">
-      <br />
-      <h2>ADD PRODUCTS</h2>
-      <hr />
+
       <form autoComplete="off" className="form-group" onSubmit={handleAdd}>
+      <h2>ADD PRODUCTS</h2>
         <label htmlFor="product-Title">Product Title</label>
         <input
           type="text"
@@ -76,16 +81,16 @@ export default function AdminAdd() {
           onChange={handleInput}
           id="Title"
         />
-        <br />
+       
         <label htmlFor="product-Description">Product Description</label>
-        <input
+        <textarea
           type="text"
-          className="form-control"
+          className="form-control text-area"
           required
           onChange={handleInput}
           id="Description"
         />
-        <br />
+       
         <label htmlFor="product-Price">Product Price</label>
         <input
           type="number"
@@ -94,7 +99,7 @@ export default function AdminAdd() {
           onChange={handleInput}
           id="Price"
         />
-        <br />
+        
         <label htmlFor="product-Brand">Product Brand</label>
         <input
           type="text"
@@ -103,7 +108,7 @@ export default function AdminAdd() {
           onChange={handleInput}
           id="Brand"
         />
-        <br />
+        
         <label htmlFor="product-Size">Product Size</label>
         <input
           type="text"
@@ -112,7 +117,7 @@ export default function AdminAdd() {
           onChange={handleInput}
           id="Size"
         />
-        <br />
+       
         <label htmlFor="product-img">Product Image</label>
         <input
           type="file"
@@ -122,12 +127,14 @@ export default function AdminAdd() {
           required
           onChange={(e) => setFiles(e.target.files)}
         />
-        <br />
+       
         <button type="submit" className="btn btn-success btn-md mybtn">
           ADD
         </button>
       </form>
       {error && <span className="error-msg">{error}</span>}
     </div>
+    </div>
+    </>
   );
 }

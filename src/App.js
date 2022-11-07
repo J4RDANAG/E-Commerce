@@ -6,7 +6,7 @@ import AdminPage from './pages/Admin/Admin'
 import {AuthContext} from './context/AuthContext'
 import {useContext} from 'react'
 import Register from './pages/RegisterPage/Register';
-import AdminProducts from './pages/AdminProducts/AdminProducts';
+import AdminProducts from './components/AdminProducts/AdminProducts';
 import AdminAdd from './pages/AdminAdd/AdminAdd';
 import About from './pages/About/About';
 import ProductsPage from './pages/ProductsPage/ProductsPage';

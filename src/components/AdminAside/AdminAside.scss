@@ -1,0 +1,13 @@
+.aside{
+    padding-left: 32px;
+    padding-top: 16px;
+    &__list-item{
+        list-style: none;
+        padding-top: 1rem;
+    }
+    &__link{
+        text-decoration: none;
+        font-size: 1.5rem;
+
+    }
+}

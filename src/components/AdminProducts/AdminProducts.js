@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import AdminAside from "../../components/AdminAside/AdminAside";
+import AdminAside from "../AdminAside/AdminAside";
 import "./AdminProducts.scss";
 import EditIcon from "../../assets/Icons/EditIcon.svg";
 import DeleteIcon from "../../assets/Icons/DeleteIcon.svg";
@@ -49,18 +49,22 @@ export default function AdminProducts() {
           <div className="admin-products__header">
             <h3>Title</h3>
             <h3>Price</h3>
-            <h3>Availability</h3>
-            <h3>Date Posted</h3>
+            <h3>size</h3>
             <h3>Actions</h3>
           </div>
-
+          <div className="admin-products__list" >
           {data?.map((product) => (
-            <div className="admin-products__list" key={product.id}>
-            <div className="admin-products__card" >
+           
+            <div className="admin-products__card" key={product.id}>
+              <div className="admin-products__details">
               <h4>{product.Title}</h4>
+              </div>
+              <div className="admin-products__details">
               <h4>{product.Price}</h4>
-              <h4>In Stock</h4>
-              <h4>{product.timestamp}</h4>
+              </div>
+              <div className="admin-products__details">
+              <h4>{product.Size}</h4>
+              </div>
               <div className="admin-products__btns">
                 <div className="admin-products__icons">
                   <Link to={`/admin/${product.id}/edit`}> 
@@ -74,10 +78,10 @@ export default function AdminProducts() {
                 </div>
               </div>
             </div>
-          </div>
+          
 
         ))}
-          
+          </div>
 </div>
   </div>
     // </>
