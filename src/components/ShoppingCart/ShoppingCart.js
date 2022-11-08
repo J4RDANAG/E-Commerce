@@ -22,7 +22,7 @@ export default function ShoppingCart() {
           {cartItems.length === 0 ? (
             <h4>Cart is Empty</h4>
           ) : (
-            <ul>
+            <ul className="cart__item-container">
               {cartItems.map((item) => (
                 <CartItem key={item.id} item={item} />
               ))}

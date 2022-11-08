@@ -8,6 +8,7 @@ import CartContext from "../../context/cart/CartContext";
 import ShoppingCart from '../../components/ShoppingCart/ShoppingCart'
 import { MobileNav } from "../../components/MobileNav/MobileNav";
 import MobileCart from '../../components/MobileCart/MobileCart'
+import { Link } from "react-router-dom";
 
 export default function ProductsPage() {
   const { addToCart } = useContext(CartContext);
@@ -37,32 +38,15 @@ export default function ProductsPage() {
 
       
       <div className="products">
-        {/* <div className="products__card">
-          <div className="products__img">
-            <img src="http://placekitten.com/280/300"></img>
-          </div>
-          <div className="products__details">
-            <div className="products__details-small">
-              <p>Brand</p> <p>Size</p>
-            </div>
-            <div className="products__details-title">
-              1990's single stitch cat photo
-            </div>
-            <div className="products__bottom-container">
-              <div className="products__price">$49.99</div>
-              <button className="products__cart-cta">
-                +
-                <img src={productCardCart} />
-              </button>
-            </div> */}
-          {/* </div>
-        </div> */}
+
         {productData?.map((product) => (
           
           <div className="products__card" key={product.id}>
+            <Link to={`/products/${product.id}`}>
             <div className="products__img-container">
               <img className="products__img" src={product.imgs[0]}></img>
             </div>
+            </Link>
             <div className="products__details">
               <div className="products__details-small">
                 <p>{product.Brand}</p> <p>{product.Size}</p>

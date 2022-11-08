@@ -6,8 +6,8 @@ import MobileCart from '../../assets/Icons/MobileCart.svg'
 import Accordian from '../../assets/Icons/Accordian.svg'
 import closeNav from '../../assets/Icons/DeleteIcon.svg'
 import CartContext from '../../context/cart/CartContext'
-import logoGif from '../../assets/logos/logo.gif'
-import staticLogo from '../../assets/logos/f_ckingSick_s.png'
+// import stackedLogo from '../../assets/logos/f_ckingsick-image.png'
+import logoGif from '../../assets/logos/croppedlogo.gif'
 
 
 
@@ -25,7 +25,11 @@ export default function NavBar() {
             <div className='nav__container'>
             <Link to='/' className='nav__link'>
                 <div className='nav__header-container'>
-                <img src={staticLogo}/>
+                {/* <img src={stackedLogo}/> */}
+                <div>f_ckingsick </div>
+                <div>f_ckingsick </div>
+                <div>f_ckingsick </div>
+                <div>f_ckingsick </div>s
                 </div>
             </Link>
         <Link to='/about' className='nav__link'>About</Link>
@@ -43,8 +47,8 @@ export default function NavBar() {
         <nav className='mobile-nav'>
             <div className='mobile-nav__top'>
                 <div>
-                    {/* <img src={logoGif} /> */}
-                    f_ckingsick
+                    <img src={logoGif} />
+                    
                     </div> 
             </div>
             {/* <div className='mobile-nav__bottom'>

@@ -13,3 +13,8 @@
         @content;
     }
 }
+@mixin xl-desktop{
+    @media screen and (min-width: $xl-desktop-breakpoint) {
+        @content;
+    }
+}

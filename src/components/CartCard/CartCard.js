@@ -6,7 +6,7 @@ const CartItem = ({ item }) => {
   const { removeItem } = useContext(CartContext);
 
   return (
-    <div className="cartItem__container">
+    // <div className="cartItem__container">
     <li className='cartItem'>
       <img src={item.imgs[0]} alt={item.Title} className='cartItem__img'/>
       <div>
@@ -16,7 +16,7 @@ const CartItem = ({ item }) => {
         Remove
       </button>
     </li>
-    </div>
+    // </div>
   );
 };
 

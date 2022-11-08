@@ -11,6 +11,7 @@ import AdminAdd from './pages/AdminAdd/AdminAdd';
 import About from './pages/About/About';
 import ProductsPage from './pages/ProductsPage/ProductsPage';
 import AdminEdit from './pages/AdminEdit/AdminEdit';
+import ProductDetails from './pages/ProductDetails/ProductDetails';
 
 
 
@@ -33,6 +34,7 @@ console.log(currentUser)
           <Route path='/login'  element={<LoginPage/>}/>
           <Route path='/about' element={<About/>}/>
           <Route path='/products' element={<ProductsPage/>}/>
+          <Route path='/products/:id' element={<ProductDetails/>}/>
           <Route path='/admin' element={<RequireAuth><AdminPage/></RequireAuth>}/>
           <Route path='/admin/products' element={<RequireAuth><AdminProducts/></RequireAuth>}/>
           <Route path='/admin/add' element={<RequireAuth><AdminAdd/></RequireAuth>}/>

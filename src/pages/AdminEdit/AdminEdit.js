@@ -5,6 +5,7 @@ import { getDoc, doc, setDoc } from 'firebase/firestore'
 import { db } from "../../firebase";
 
 
+
 export default function AdminEdit() {
     const [userInput, setUserInput] = useState(null)
     const {id} = useParams()
@@ -14,7 +15,9 @@ export default function AdminEdit() {
         const docRef = doc(db, "Products", id);
         try {
             const docSnap = await getDoc(docRef);
-             let data = docSnap.data()    
+             let data = docSnap.data() 
+            //  console.log(id)
+             console.log(docSnap.data())   
               setUserInput(data)
         } catch(error) {
             console.log(error)
@@ -32,7 +35,7 @@ export default function AdminEdit() {
       const value = e.target.value;
       setUserInput({ ...userInput, [id]: value });
 
-      const docRef = doc(db, "Products", "uqoAFwr2KQrdlMKwvJor")
+      const docRef = doc(db, "Products", id)
       setDoc(docRef, userInput)
       .then(docRef => {
           console.log("Entire Document has been updated successfully");
@@ -55,15 +58,17 @@ export default function AdminEdit() {
  // Consider Saving values, onchange will send a ton of requests to my backend. 
   return (
 
-    <div className="container">
-    <br />
+    <div className="container1">
+  
     <h2>EDIT PRODUCTS</h2>
-    <hr />
-    <form autoComplete="off" className="form-group" 
+  
+    <form autoComplete="off" className="form-group1" 
     
     
     >
+      <br />
       <label htmlFor="product-name">Product Title</label>
+      <br />
       <input
         type="text"
         className="form-control"
@@ -73,10 +78,12 @@ export default function AdminEdit() {
         id="Title"
       />
       <br />
-      <label htmlFor="product-name">Product Description</label>
-      <input
+       <label htmlFor="product-name">Product Description</label>
+      <br />
+     
+      <textarea
         type="text"
-        className="form-control"
+        className="text-area"
         required
         value={userInput.Description}
         onChange={editWithInput}
@@ -84,6 +91,7 @@ export default function AdminEdit() {
       />
       <br />
       <label htmlFor="product-price">Product Price</label>
+      <br />
       <input
         type="number"
         className="form-control"
@@ -94,6 +102,7 @@ export default function AdminEdit() {
       />
               <br />
         <label htmlFor="product-Brand">Product Brand</label>
+        <br />
         <input
           type="text"
           className="form-control"
@@ -104,6 +113,7 @@ export default function AdminEdit() {
         />
         <br />
         <label htmlFor="product-Size">Product Size</label>
+        <br />
         <input
           type="text"
           className="form-control"
