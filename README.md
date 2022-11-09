@@ -1,3 +1,5 @@
+# F_ckingsick E-Commerce CRUD APP
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 In the project (client) directory, you can run:
@@ -7,6 +9,13 @@ In the project (client) directory, you can run:
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
+### Getting Started
+
+
+
+
+
+
 Open the react app, and CD into client
 goto https://firebase.google.com/ , Signup and then hit the 'Get Started CTA'
 
@@ -15,7 +24,8 @@ Create an App, you can disable google analytics as its not used in this project.
 Now that you have created an app, add firebase by selecting the </> 'Web' CTA - hosting not required currently,
 this step will instruct you to npm I firebase, you can also npm I for all other dependencies and has a bunch of private information pertaining to the app you have just created. 
 Use this data to fill out the variables in your .env file, and example of what this looks like can be found in env.example. make sure .env is in the root folder (client)
-    *if you forgot to copy the information it can also be found by using the side navigation, selecting the gear/settings beside 'Project Overview',
+
+*if you forgot to copy the information it can also be found by using the side navigation, selecting the gear/settings beside 'Project Overview',
     selecting 'Project Settings' and scroll down.
 
 using the side navigation, navigate to firestore select test mode, or select production mode and change
