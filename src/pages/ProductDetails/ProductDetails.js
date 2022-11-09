@@ -53,7 +53,13 @@ export default function ProductDetails() {
            
         </Carousel>
         </div>
-        {/* <p>Details</p> */}
+        <div>
+        <p>Details</p>
+        <p>Details</p>
+        <p>Details</p>
+        <p>Details</p>
+        </div>
+        
         </div>
       <div className='mobileNav'>
         <MobileNav/>

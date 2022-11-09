@@ -2,6 +2,20 @@
 
 .nav{
     display: none;
+    @include tablet {
+      display: flex;
+      position: sticky;
+      top: 0;
+      justify-content: space-between;
+      align-items: center;
+      padding: 32px 8rem 32px 8rem;
+      gap: 5rem;
+      color: white;
+      z-index: 12;
+      background-image: url(../../assets/background-images/trippy-concrete.jpg);
+      // background-position: center;
+      background-size: cover;
+    }
     @include desktop{
         display: flex;
         position: sticky;
@@ -12,35 +26,42 @@
         gap: 5rem;
         color: white;
         z-index: 12;
-        background-image: url(../../assets/background-images/concrete-background.jpg);
+        background-image: url(../../assets/background-images/trippy-concrete.jpg);
         // background-position: center;
         background-size: cover;
     }
 
     &__container{
-        @include desktop {
+        @include tablet {
             display: flex;
             align-items: center;
             gap: 5rem;
         }
     }
+    &__logo{
+      width: 200px;
+      height: 80px;
+    }
     &__link{
-        @include desktop {
+        @include tablet {
             text-decoration: none;
             color: inherit;
+            font-size: 24px;
         }
 
     }
     &__link--cart{
-        @include desktop {
+        @include tablet {
             display: flex;
             position: relative;
-            
+            border: none;
+            background-color: inherit;
+            cursor: pointer;     
         }
 
     }
     &__header2{
-        @include desktop {
+        @include tablet {
             padding-left: 36px;
         }
     }
@@ -66,7 +87,7 @@
     padding: 16px;
     background-image: url('../../assets/background-images/trippy-concrete.jpg');
     
-@include desktop{
+@include tablet{
     display: none;
 }
   &__btn {

@@ -1,5 +1,8 @@
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/mixins' as *;
 .about{
     padding: 16px;
+    margin-bottom: 70px;
     &__container{
         padding: 0rem 0.5rem 0rem 0.5rem;
     }
@@ -8,5 +11,17 @@
     }
     &__description{
         padding-top: 1rem;
+    }
+    &__store-wrapper{
+        padding: 0px 16px 0px 16px;
+        @include tablet {
+            padding: 0px 64px 0px 64px;
+        }
+        @include desktop {
+            padding: 0px 300px 0px 300px;
+        }
+        @include xl-desktop {
+            padding: 0px 400px 0px 400px;
+        }
     }
 }

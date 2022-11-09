@@ -1,9 +1,19 @@
-
+@use '../src/styles/partials/fonts' as *;
+@use '../src/styles/partials/mixins' as *;
 *{
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
- 
+}
+.mobileNav{
+  position: sticky;
+  bottom: 0;
+@include tablet{
+  display: none;
+}
+@include desktop{
+  display: none;
+}
 }
 
 

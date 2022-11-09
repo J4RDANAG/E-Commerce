@@ -1,33 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import NavBar from "../../components/NavBar/NavBar";
 import ShoppingCart from "../../components/ShoppingCart/ShoppingCart";
 import MobileCart from "../../components/MobileCart/MobileCart";
 import { MobileNav } from "../../components/MobileNav/MobileNav";
-import tester from "../../assets/background-images/trippy-concrete.jpg";
-import { doc } from "firebase/firestore";
-import { db } from "../../firebase";
 import "./About.scss";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 
 export default function About() {
-  //   const [images, setImages] = useState()
-  //   const fetchData = async () => {
-
-  //     const docRef = doc(db, "Products", "uqoAFwr2KQrdlMKwvJor");
-  //     try {
-  //         const docSnap = await getDoc(docRef);
-  //          let data = docSnap.data()
-  //          setImages(data)
-  //           // setUserInput(data)
-  //     } catch(error) {
-  //         console.log(error)
-  //     }
-
-  // }
-  // useEffect(()=>{
-  //   fetchData()
-  // },[])
 
   const thanksImages = [
     "https://firebasestorage.googleapis.com/v0/b/fckingsick-2c710.appspot.com/o/image_50457601.JPG?alt=media&token=e4d20053-ee0e-4444-8a84-618ddb85adf1",
@@ -80,8 +60,9 @@ export default function About() {
         </div>
 
         <div className="about__container">
+          
+          <div className="about__store-wrapper">
           <h2>THANKS</h2>
-          <div>
             <a href="https://www.google.com/search?q=Thanks+Vancouver&rlz=1C1ONGR_enCA1015CA1015&tbm=lcl&sxsrf=ALiCzsaGcMhyW3SBgjk6NQIj7N-FIUhJiw%3A1667790266264&ei=unVoY8_dD7nf0PEPrcaM0AQ&ved=0ahUKEwjPooXzipv7AhW5LzQIHS0jA0oQ4dUDCAk&uact=5&oq=Thanks+Vancouver&gs_lcp=Cg1nd3Mtd2l6LWxvY2FsEAMyBAgjECcyCAgAEBYQHhAKMggIABAWEB4QCjICCCYyBQgAEIYDMgUIABCGAzIFCAAQhgMyBQgAEIYDOgcIIxDqAhAnOgQIABBDOgoIABCxAxCDARBDOgsIABCABBCxAxCDAToHCAAQsQMQQzoICAAQgAQQsQM6BQgAEIAEOgoIABCABBCHAhAUOggIABCxAxCDAToNCAAQgAQQhwIQsQMQFDoHCAAQgAQQCjoNCAAQgAQQsQMQgwEQCjoFCAAQkQI6CAgAEBYQHhAPOgYIABAWEB46CggAEBYQHhAPEApQAFi7KmCbK2gBcAB4AIABYIgBhweSAQIxNpgBAKABAbABCsABAQ&sclient=gws-wiz-local#rlfi=hd:;si:2985560792556155567,l,ChBUaGFua3MgVmFuY291dmVySIXoqNeIuYCACFoYEAAYABgBIhB0aGFua3MgdmFuY291dmVykgEOY2xvdGhpbmdfc3RvcmWaASRDaGREU1VoTk1HOW5TMFZKUTBGblNVUjFhRFpoUkdsblJSQUI;mv:[[49.285204799999995,-123.09536550000001],[49.274699299999995,-123.12863910000002]]">
               <h3 className="about__address">
                 369 Carrall Street, 4th Floor, Vancouver B.C.
@@ -112,8 +93,9 @@ export default function About() {
           </Carousel>
         </div>
         <div className="about__container">
+          
+          <div className="about__store-wrapper">
           <h2>GORE STREET VINTAGE</h2>
-          <div>
             <a href="https://www.google.com/search?q=Gore+Street+Vintage&rlz=1C1ONGR_enCA1015CA1015&tbm=lcl&sxsrf=ALiCzsbBF0LLrRJRrmIuAsC1itOSl-gBKw%3A1667790285485&ei=zXVoY5KdHd2F0PEP3q-1oAE&ved=0ahUKEwjSt5r8ipv7AhXdAjQIHd5XDRQQ4dUDCAk&uact=5&oq=Gore+Street+Vintage&gs_lcp=Cg1nd3Mtd2l6LWxvY2FsEAMyBQgAEIAEMgQIABBDMgUIABCABDIGCAAQFhAeMgIIJjoHCCMQ6gIQJzoKCAAQsQMQgwEQQzoFCAAQkQI6CwgAEIAEELEDEIMBOgQIIxAnOhAIABCABBCHAhCxAxCDARAUOgcIABCxAxBDOggIABCABBCxAzoICAAQsQMQgwE6BQgAELEDUABYthxgrh1oAXAAeACAAVqIAa8IkgECMTmYAQCgAQGwAQrAAQE&sclient=gws-wiz-local#rlfi=hd:;si:4619136058353856452,l,ChNHb3JlIFN0cmVldCBWaW50YWdlSKOJvLK8toCACForEAAQARACGAAYARgCIhNnb3JlIHN0cmVldCB2aW50YWdlKggIAhAAEAEQApIBFnZpbnRhZ2VfY2xvdGhpbmdfc3RvcmWaASRDaGREU1VoTk1HOW5TMFZKUTBGblNVUTJaM1poTFc5QlJSQUI,y,2X0FDL2-q50;mv:[[49.278612177319026,-123.09697852353712],[49.27825222268096,-123.09753027646288]]">
               <h3 className="about__address">
                 298 E Gerogia Street, Vancouver B.C.

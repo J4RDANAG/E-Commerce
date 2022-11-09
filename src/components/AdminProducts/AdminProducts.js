@@ -57,13 +57,13 @@ export default function AdminProducts() {
            
             <div className="admin-products__card" key={product.id}>
               <div className="admin-products__details">
-              <h4>{product.Title}</h4>
+              <p>{product.Title}</p>
               </div>
               <div className="admin-products__details">
-              <h4>{product.Price}</h4>
+              <p>{product.Price}</p>
               </div>
               <div className="admin-products__details">
-              <h4>{product.Size}</h4>
+              <p>{product.Size}</p>
               </div>
               <div className="admin-products__btns">
                 <div className="admin-products__icons">

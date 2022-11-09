@@ -1,12 +1,9 @@
 import React, { useContext, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import './NavBar.scss'
-import ShoppingCart from '../../assets/Icons/ShoppingCart.svg'
 import MobileCart from '../../assets/Icons/MobileCart.svg'
-import Accordian from '../../assets/Icons/Accordian.svg'
-import closeNav from '../../assets/Icons/DeleteIcon.svg'
 import CartContext from '../../context/cart/CartContext'
-// import stackedLogo from '../../assets/logos/f_ckingsick-image.png'
+import stackedLogo from '../../assets/logos/f_ckingSick_s.png'
 import logoGif from '../../assets/logos/croppedlogo.gif'
 
 
@@ -25,18 +22,14 @@ export default function NavBar() {
             <div className='nav__container'>
             <Link to='/' className='nav__link'>
                 <div className='nav__header-container'>
-                {/* <img src={stackedLogo}/> */}
-                <div>f_ckingsick </div>
-                <div>f_ckingsick </div>
-                <div>f_ckingsick </div>
-                <div>f_ckingsick </div>s
+                <img src={stackedLogo} className='nav__logo'/>
                 </div>
             </Link>
-        <Link to='/about' className='nav__link'>About</Link>
-        <Link to='/products' className='nav__link'>Shop All</Link>
+        <Link to='/about' className='nav__link'><p>ABOUT</p></Link>
+        <Link to='/products' className='nav__link'><p>SHOP</p></Link>
         </div>
         <button className='nav__link--cart' onClick={showHideCart}>
-            <img src={ShoppingCart}/>
+            <img src={MobileCart}/>
             
             { cartItems.length > 0 && <div className='nav__cart-items'><span>{cartItems.length}</span></div> }
         </button>
