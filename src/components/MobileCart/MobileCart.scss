@@ -2,9 +2,9 @@
     position: fixed;
     bottom: 68px;
     // right: 20px;
-    border-radius: 12px;
+    border-radius: 4px;
     background-color: white;
-    border: 1px solid gray;
+    border: 1px solid black;
     padding: 10px;
     z-index: 10;
     &__item-list {
@@ -14,7 +14,10 @@
     }
     &__item-list:first-child{
       border-top: 1px solid black;
-
+    }
+    &__close-btn{
+      border: none;
+      background-color: white;
     }
 
     &__total-price {

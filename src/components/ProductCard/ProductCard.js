@@ -3,6 +3,7 @@ import { useContext } from 'react';
 import CartContext from '../../context/cart/CartContext';
 import { Link } from "react-router-dom";
 import productCardCart from "../../assets/Icons/ShoppingCart.svg";
+import './ProductCard.scss'
 
 export default function ProductCard({ product } )  {
     const { addToCart, cartItems } = useContext(CartContext);
@@ -12,8 +13,6 @@ export default function ProductCard({ product } )  {
     })
 
   return (
-    <>
-    {/* {isInCart ? <p>yes</p> : <p>no</p> } */}
     <div className="products__card" key={product.id}>
             <Link to={`/products/${product.id}`}>
             <div className="products__img-container">
@@ -28,13 +27,15 @@ export default function ProductCard({ product } )  {
                 <div><p className='products__small-text'>{product.Size}</p></div>
                 <div className="products__price"><p className='products__small-text'>{`$${product.Price}`}</p></div>
                 
-                {isInCart ? <p>in cart</p> :
+                {isInCart ? 
+                <button className="products--in-cart">
+                  IN <img src={productCardCart} />
+                </button>  :
                 <button className="products__cart-cta" onClick={() => addToCart(product)}>
                   + <img src={productCardCart} />
                 </button> }
               </div>
             </div>
           </div>
-    </>
   )
 }

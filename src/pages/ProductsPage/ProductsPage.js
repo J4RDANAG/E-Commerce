@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
 import NavBar from "../../components/NavBar/NavBar";
-import productCardCart from "../../assets/Icons/ShoppingCart.svg";
 import { db } from "../../firebase";
 import { getDocs, collection } from "firebase/firestore";
 import "./ProductsPage.scss";
@@ -8,8 +7,9 @@ import CartContext from "../../context/cart/CartContext";
 import ShoppingCart from '../../components/ShoppingCart/ShoppingCart'
 import { MobileNav } from "../../components/MobileNav/MobileNav";
 import MobileCart from '../../components/MobileCart/MobileCart'
-import { Link } from "react-router-dom";
 import ProductCard from "../../components/ProductCard/ProductCard";
+
+
 
 export default function ProductsPage() {
   const { addToCart, cartItems } = useContext(CartContext);

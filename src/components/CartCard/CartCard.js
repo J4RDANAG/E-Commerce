@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import "./CartCard.scss";
 import CartContext from "../../context/cart/CartContext";
+import productDelete from '../../assets/Icons/deleteProduct.svg'
 
 const CartItem = ({ item }) => {
   const { removeItem } = useContext(CartContext);
@@ -10,10 +11,10 @@ const CartItem = ({ item }) => {
     <li className='cartItem'>
       <img src={item.imgs[0]} alt={item.Title} className='cartItem__img'/>
       <div>
-        {item.Title} {`$${item.Price}`}
+      <p> {item.Title} {`$${item.Price}`}</p>
       </div>
       <button className='cartItem__btn' onClick={() => removeItem(item.id)}>
-        Remove
+        <img src={productDelete}/>
       </button>
     </li>
     // </div>

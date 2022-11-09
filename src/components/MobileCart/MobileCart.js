@@ -3,6 +3,8 @@ import './MobileCart.scss'
 import CartContext from "../../context/cart/CartContext";
 import CartItem from "../CartCard/CartCard";
 import { useContext } from "react";
+import closeX from '../../assets/Icons/DeleteIcon.svg'
+
 
 export default function MobileCart() {
   
@@ -15,7 +17,7 @@ export default function MobileCart() {
           <button 
             className='mobile-cart__close-btn'
             onClick={mobileShowHideCart}
-          >Close</button>
+          ><img src={closeX}/></button>
         </div>
         <div className='mobile-cart__item-list'>
           {cartItems.length === 0 ? (
@@ -29,10 +31,12 @@ export default function MobileCart() {
           )}
         </div>
         <div className='mobile-cart__total-price'>
-          <div>Cart Total</div>
+          <div><h2>Cart Total</h2></div>
           <div >
+            <h2>
             $
             {cartItems.reduce((amount, item) => item.Price + amount, 0)}
+            </h2>
           </div>
         </div>
       </div>

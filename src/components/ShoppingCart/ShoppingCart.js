@@ -4,6 +4,7 @@ import './ShoppingCart.scss'
 import CartContext from "../../context/cart/CartContext";
 import CartItem from "../CartCard/CartCard";
 import { useContext } from "react";
+import closeX from '../../assets/Icons/DeleteIcon.svg'
 export default function ShoppingCart() {
   
   const { showCart, cartItems, showHideCart } = useContext(CartContext);
@@ -16,7 +17,7 @@ export default function ShoppingCart() {
           <button 
             className='cart__close-btn'
             onClick={showHideCart}
-          >Close</button>
+          ><img src={closeX}/></button>
         </div>
         <div className='cart__item-list'>
           {cartItems.length === 0 ? (
@@ -30,10 +31,12 @@ export default function ShoppingCart() {
           )}
         </div>
         <div className='cart__total-price'>
-          <div>Cart Total</div>
+          <div><h2>Cart Total</h2></div>
           <div >
+            <h2>
             $
             {cartItems.reduce((amount, item) => item.Price + amount, 0)}
+            </h2>
           </div>
         </div>
       </div>
