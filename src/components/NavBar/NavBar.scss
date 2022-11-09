@@ -43,12 +43,30 @@
       height: 80px;
     }
     &__link{
+    
         @include tablet {
             text-decoration: none;
             color: inherit;
             font-size: 24px;
+            position: relative;
+            transition: all 0.2s ease-in-out;
         }
-
+    }
+    &__link::after{
+      content: " ";
+      background-color: white;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 250ms ease-in;
+    }
+    &__link:hover::after{
+      transform: scaleX(1);
+      transform-origin: left;
     }
     &__link--cart{
         @include tablet {
@@ -77,6 +95,9 @@
       position: absolute;
       right: 0;
       
+    }
+    &__cart-count{
+      font-size: 16px;
     }
 }
 

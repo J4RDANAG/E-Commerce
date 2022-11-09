@@ -6,6 +6,7 @@ import { MobileNav } from "../../components/MobileNav/MobileNav";
 import "./About.scss";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
+import contactOrb from '../../assets/logos/fckingorb.png'
 
 export default function About() {
 
@@ -25,19 +26,12 @@ export default function About() {
     "https://firebasestorage.googleapis.com/v0/b/fckingsick-2c710.appspot.com/o/image_50444801.JPG?alt=media&token=9adead63-f253-40c0-8bd8-b462c30cf35d",
   ];
   const goreImages = [
-    "https://firebasestorage.googleapis.com/v0/b/fckingsick-2c710.appspot.com/o/9B7558ED-0612-4C45-8348-04AA7216713A.jpeg?alt=media&token=c416a32f-4487-4953-9dc6-30eff7e271c5",
+    "https://firebasestorage.googleapis.com/v0/b/fckingsick-2c710.appspot.com/o/Gore1.JPG?alt=media&token=859871be-2ced-4155-a256-03389173c107",
     
-    "https://firebasestorage.googleapis.com/v0/b/fckingsick-2c710.appspot.com/o/image_50422017.JPG?alt=media&token=26f2a1af-f3ff-4f09-923f-1ed07096c00e",
+    "https://firebasestorage.googleapis.com/v0/b/fckingsick-2c710.appspot.com/o/Gore2.JPG?alt=media&token=c3f0c5da-448d-4134-a424-f3805947d71d",
     
-    "https://firebasestorage.googleapis.com/v0/b/fckingsick-2c710.appspot.com/o/image_50433281.JPG?alt=media&token=b64d6517-98af-4979-b618-5e6c66f9b175",
+    "https://firebasestorage.googleapis.com/v0/b/fckingsick-2c710.appspot.com/o/Gore3%20(2).JPG?alt=media&token=a1727e29-0207-418c-9d8c-13ef23c24935",
     
-    "https://firebasestorage.googleapis.com/v0/b/fckingsick-2c710.appspot.com/o/image_50437377.JPG?alt=media&token=4f6990bb-1782-4bea-90d4-6943d9edab25",
-    
-    "https://firebasestorage.googleapis.com/v0/b/fckingsick-2c710.appspot.com/o/image_50386177.JPG?alt=media&token=e27d4b1a-84a6-4d40-9abb-4dfeaf4b260b",
-    
-    "https://firebasestorage.googleapis.com/v0/b/fckingsick-2c710.appspot.com/o/image_50426881.JPG?alt=media&token=4048dce4-8857-4ae5-8452-4ffdc5b709c5",
-    
-    "https://firebasestorage.googleapis.com/v0/b/fckingsick-2c710.appspot.com/o/image_50444801.JPG?alt=media&token=9adead63-f253-40c0-8bd8-b462c30cf35d",
   ];
 
 
@@ -46,11 +40,13 @@ export default function About() {
       <NavBar />
       <ShoppingCart />
       <div className="about">
+        <div className="about__contact-orb-container"><img className="about__orb" src={contactOrb}/></div>
         <div className="products__slider-wrapper">
           <Carousel
             showThumbs={false}
             showArrows={true}
             autoPlay
+            infiniteLoop={true}
             className="products__slider"
           >
             {thanksImages.map((product, index) => (
@@ -85,6 +81,7 @@ export default function About() {
             showThumbs={false}
             showArrows={true}
             autoPlay
+            infiniteLoop={true}
             className="products__slider"
           >
             {goreImages.map((product, index) => (

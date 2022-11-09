@@ -30,8 +30,8 @@ export default function NavBar() {
         </div>
         <button className='nav__link--cart' onClick={showHideCart}>
             <img src={MobileCart}/>
-            
-            { cartItems.length > 0 && <div className='nav__cart-items'><span>{cartItems.length}</span></div> }
+
+            { cartItems.length > 0 && <div className='nav__cart-items'><p className='nav__cart-count'>{cartItems.length}</p></div> }
         </button>
         
         
