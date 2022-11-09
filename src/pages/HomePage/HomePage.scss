@@ -19,6 +19,12 @@
         height: 32px;
         border-radius: 8px;
         background-color: white;
+        cursor: pointer;
+    }
+    &__cta:hover{
+        color: white;
+        background-color: black;
+        cursor: pointer;
     }
     &__cta-container{
         width: 240px;

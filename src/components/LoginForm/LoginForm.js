@@ -24,7 +24,7 @@ signInWithEmailAndPassword(auth, email, password)
     const user = userCredential.user;
     dispatch({type:"LOGIN", payload:user})
     console.log(user)
-    navigate('/')
+    navigate('/admin')
   })
   .catch((error) => {
 setError(true)
@@ -37,7 +37,7 @@ setError(true)
             <input type='email' placeholder='Johndoe@gmail.com' className='login__input' onChange={e=>setEmail(e.target.value)}/>
             <input type='password' placeholder='password123' className='login__input' onChange={e=>setPassword(e.target.value)}/>
             <button type='submit'>Login</button>
-            {error && <span className='login__error'>Wrong email or password!</span>}
+             {/* {error && <span className='login__error'>Wrong email or password!</span>} */}
         </form>
 
 
