@@ -1,13 +1,13 @@
-.login{
-    height: 100vh;
+.login {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &__form {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    &__form{
-        display: flex;
-        flex-direction: column;
-    }
-    &__input{
-        height: 2rem;
-    }
+    flex-direction: column;
+  }
+  &__input {
+    height: 2rem;
+  }
 }

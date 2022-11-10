@@ -1,18 +1,17 @@
-.form-group{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-left: 100%;
-    width: 100%;
-
+.form-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 100%;
+  width: 100%;
 }
 
-.form-control{
-    height: 1.5rem;
-    margin: 16px;
+.form-control {
+  height: 1.5rem;
+  margin: 16px;
 }
-.text-area{
-    height: 6rem;
-    resize: none;
-    margin: 16px;
+.text-area {
+  height: 6rem;
+  resize: none;
+  margin: 16px;
 }

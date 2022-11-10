@@ -6,13 +6,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    // padding-bottom: 240px;
     @include tablet {
         height: 600px;
     }
     @include desktop {
         margin-top: 32px;
-        // height: 700px;
     }
     &__cta{
         width: 100%;

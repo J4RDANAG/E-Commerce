@@ -16,74 +16,63 @@ export default function AdminProducts() {
       try {
         const querySnapshot = await getDocs(collection(db, "Products"));
         querySnapshot.forEach((doc) => {
-          list.push({ id: doc.id,  ...doc.data()});
-        //   console.log(doc.id, "=>", doc.data());
-        // console.log(list)
+          list.push({ id: doc.id, ...doc.data() });
         });
-        
+
         setData(list);
-       
       } catch (err) {
         console.log(err);
       }
     };
-    
+
     fetchData();
   }, []);
 
   const handleDelete = async (id) => {
-    try{
-      await deleteDoc(doc(db, 'Products', id))
+    try {
+      await deleteDoc(doc(db, "Products", id));
       setData(data.filter((item) => item.id !== id));
-    }catch(err){
-      console.log('did not delete')
+    } catch (err) {
+      console.log("did not delete");
     }
-    
   };
-// console.log(data)
   return (
-    // <>
-      <div className="position-aside">
-        <AdminAside />
-        <div className="admin-products">
-          <div className="admin-products__header">
-            <h3>Title</h3>
-            <h3>Price</h3>
-            <h3>size</h3>
-            <h3>Actions</h3>
-          </div>
-          <div className="admin-products__list" >
+    <div className="position-aside">
+      <AdminAside />
+      <div className="admin-products">
+        <div className="admin-products__header">
+          <h3>Title</h3>
+          <h3>Price</h3>
+          <h3>size</h3>
+          <h3>Actions</h3>
+        </div>
+        <div className="admin-products__list">
           {data?.map((product) => (
-           
             <div className="admin-products__card" key={product.id}>
               <div className="admin-products__details">
-              <p>{product.Title}</p>
+                <p>{product.Title}</p>
               </div>
               <div className="admin-products__details">
-              <p>{product.Price}</p>
+                <p>{product.Price}</p>
               </div>
               <div className="admin-products__details">
-              <p>{product.Size}</p>
+                <p>{product.Size}</p>
               </div>
               <div className="admin-products__btns">
                 <div className="admin-products__icons">
-                  <Link to={`/admin/${product.id}/edit`}> 
-                  <img src={EditIcon} />
+                  <Link to={`/admin/${product.id}/edit`}>
+                    <img src={EditIcon} />
                   </Link>
-                  
+
                   <div onClick={() => handleDelete(product.id)}>
-                  <img src={DeleteIcon} />
-                    </div>
-                  
+                    <img src={DeleteIcon} />
+                  </div>
                 </div>
               </div>
             </div>
-          
-
-        ))}
-          </div>
-</div>
-  </div>
-    // </>
+          ))}
+        </div>
+      </div>
+    </div>
   );
 }

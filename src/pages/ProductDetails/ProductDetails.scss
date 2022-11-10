@@ -1,45 +1,41 @@
 @use "../../styles/partials/mixins" as *;
 
-.product-details{
+.product-details {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    @include tablet {
+      padding: 32px 64px 16px 64px;
+    }
+    @include desktop {
+      padding: 48px 300px 16px 300px;
+    }
+    @include xl-desktop {
+      padding: 48px 400px 16px 400px;
+    }
+  }
+  &__details-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__details-wrapper:nth-child(2) {
+    justify-content: space-between;
+    flex: 1;
+    padding-top: 16px;
+  }
+  &__details-wrapper:nth-child(3) {
+    justify-content: space-between;
+    flex: 1;
+    padding-top: 16px;
+  }
 
-    &__container{
-        display: flex;
-        flex-direction: column;
-        padding: 16px;
-        @include tablet {
-            padding: 32px 64px 16px 64px;
-        }
-        @include desktop{
-            padding: 48px 300px 16px 300px;
-        }
-        @include xl-desktop{
-            padding: 48px 400px 16px 400px; 
-        }
-    }
-    &__details-wrapper{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        
-    }
-    &__details-wrapper:nth-child(2){
-        justify-content: space-between;
-        flex: 1;
-        padding-top: 16px;
-    }
-    &__details-wrapper:nth-child(3){
-        justify-content: space-between;
-        flex: 1;
-        padding-top: 16px;
-    }
-
-    &__description{
-        padding: 32px 16px 32px 16px
-    }
+  &__description {
+    padding: 32px 16px 32px 16px;
+  }
 }
-
-
 
 .products__image {
   width: 17.5rem;

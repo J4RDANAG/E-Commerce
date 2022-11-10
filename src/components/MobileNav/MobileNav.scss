@@ -1,33 +1,31 @@
-.bottom-nav{
-    position: fixed;
-    display: flex;
-    justify-content: space-between;
-    padding: 12px 16px 12px 16px;
-    width: 100%;
-    bottom: 0;
-    background-image: url('../../assets/background-images/trippy-concrete.jpg');
-    // background-position: center;
-    background-size: covercd;
-    background-repeat: no-repeat;
+.bottom-nav {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 16px 12px 16px;
+  width: 100%;
+  bottom: 0;
+  background-image: url("../../assets/background-images/trippy-concrete.jpg");
+  background-size: covercd;
+  background-repeat: no-repeat;
 
-    &__cart{
-        border: none;
-        background-color: inherit;
-        cursor: pointer;
-        position: relative;
-        
-    }
-    &__items{
-        position: absolute;
-        right: 0;
-        top: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 20px;
-        height: 20px;
-        color: white;
-        background-color: red;
-        border-radius: 50%;
-    }
+  &__cart {
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+    position: relative;
+  }
+  &__items {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    color: white;
+    background-color: red;
+    border-radius: 50%;
+  }
 }

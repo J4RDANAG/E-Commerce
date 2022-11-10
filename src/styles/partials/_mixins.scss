@@ -1,20 +1,18 @@
 @use "./variables" as *;
 
-// Tablet and Desktop Breakpoints
-
 @mixin tablet {
-    @media screen and (min-width: $tablet-breakpoint) {
-        @content;
-    }
+  @media screen and (min-width: $tablet-breakpoint) {
+    @content;
+  }
 }
 
 @mixin desktop {
-    @media screen and (min-width: $desktop-breakpoint) {
-        @content;
-    }
+  @media screen and (min-width: $desktop-breakpoint) {
+    @content;
+  }
 }
-@mixin xl-desktop{
-    @media screen and (min-width: $xl-desktop-breakpoint) {
-        @content;
-    }
+@mixin xl-desktop {
+  @media screen and (min-width: $xl-desktop-breakpoint) {
+    @content;
+  }
 }

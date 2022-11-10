@@ -1,123 +1,118 @@
-@use '../../styles/partials/mixins' as *;
+@use "../../styles/partials/mixins" as *;
 
-.nav{
-    display: none;
+.nav {
+  display: none;
+  @include tablet {
+    display: flex;
+    position: sticky;
+    top: 0;
+    justify-content: space-between;
+    align-items: center;
+    padding: 32px 8rem 32px 8rem;
+    gap: 5rem;
+    color: white;
+    z-index: 12;
+    background-image: url(../../assets/background-images/trippy-concrete.jpg);
+    background-size: cover;
+  }
+  @include desktop {
+    display: flex;
+    position: sticky;
+    top: 0;
+    justify-content: space-between;
+    align-items: center;
+    padding: 32px 8rem 32px 8rem;
+    gap: 5rem;
+    color: white;
+    z-index: 12;
+    background-image: url(../../assets/background-images/trippy-concrete.jpg);
+    background-size: cover;
+  }
+
+  &__container {
     @include tablet {
       display: flex;
-      position: sticky;
-      top: 0;
-      justify-content: space-between;
       align-items: center;
-      padding: 32px 8rem 32px 8rem;
       gap: 5rem;
-      color: white;
-      z-index: 12;
-      background-image: url(../../assets/background-images/trippy-concrete.jpg);
-      // background-position: center;
-      background-size: cover;
     }
-    @include desktop{
-        display: flex;
-        position: sticky;
-        top: 0;
-        justify-content: space-between;
-        align-items: center;
-        padding: 32px 8rem 32px 8rem;
-        gap: 5rem;
-        color: white;
-        z-index: 12;
-        background-image: url(../../assets/background-images/trippy-concrete.jpg);
-        // background-position: center;
-        background-size: cover;
+  }
+  &__logo {
+    width: 200px;
+    height: 80px;
+  }
+  &__link {
+    @include tablet {
+      text-decoration: none;
+      color: inherit;
+      font-size: 24px;
+      position: relative;
+      transition: all 0.2s ease-in-out;
     }
-
-    &__container{
-        @include tablet {
-            display: flex;
-            align-items: center;
-            gap: 5rem;
-        }
-    }
-    &__logo{
-      width: 200px;
-      height: 80px;
-    }
-    &__link{
-    
-        @include tablet {
-            text-decoration: none;
-            color: inherit;
-            font-size: 24px;
-            position: relative;
-            transition: all 0.2s ease-in-out;
-        }
-    }
-    &__link::after{
-      content: " ";
-      background-color: white;
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      height: 2px;
-      transform: scaleX(0);
-      transform-origin: right;
-      transition: transform 250ms ease-in;
-    }
-    &__link:hover::after{
-      transform: scaleX(1);
-      transform-origin: left;
-    }
-    &__link--cart{
-        @include tablet {
-            display: flex;
-            position: relative;
-            border: none;
-            background-color: inherit;
-            cursor: pointer;     
-        }
-
-    }
-    &__header2{
-        @include tablet {
-            padding-left: 36px;
-        }
-    }
-    &__cart-items{
+  }
+  &__link::after {
+    content: " ";
+    background-color: white;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 250ms ease-in;
+  }
+  &__link:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  &__link--cart {
+    @include tablet {
       display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 20px;
-      height: 20px;
-      color: white;
-      background-color: red;
-      border-radius: 50%;
-      position: absolute;
-      right: 0;
-      
+      position: relative;
+      border: none;
+      background-color: inherit;
+      cursor: pointer;
     }
-    &__cart-count{
-      font-size: 16px;
+  }
+  &__header2 {
+    @include tablet {
+      padding-left: 36px;
     }
-}
-
-.mobile-nav{
-    position: relative;
+  }
+  &__cart-items {
     display: flex;
     justify-content: center;
-    padding: 16px;
-    background-image: url('../../assets/background-images/trippy-concrete.jpg');
-    
-@include tablet{
-    display: none;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    color: white;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    right: 0;
+  }
+  &__cart-count {
+    font-size: 16px;
+  }
 }
+
+.mobile-nav {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 16px;
+  background-image: url("../../assets/background-images/trippy-concrete.jpg");
+
+  @include tablet {
+    display: none;
+  }
   &__btn {
     z-index: 10;
     border: none;
     background-color: inherit;
     cursor: pointer;
   }
-  
+
   &__ul {
     display: flex;
     flex-direction: column;
@@ -138,27 +133,16 @@
     gap: 1rem;
     color: white;
   }
-//   &__list-item{
-//     padding: 16px;
-//   }
-  
+
   &--show {
     width: 100%;
     transition: 2s;
   }
-  
+
   &__link {
     color: inherit;
     font-size: 12px;
     text-decoration: none;
     text-transform: uppercase;
   }
-//   &__link:hover {
-//     color: inherit;
-//     font-size: 16px;
-//     color: blue;
-//     text-decoration: none;
-//     text-transform: uppercase;
-//     do I need this for mobile? probably not
-//   }
 }
